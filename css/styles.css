@@ -1,8 +1,27 @@
-.container-fluid {
-    background-color: black;
+h1 {
+    font-family: 'Allerta Stencil', sans-serif;
+    font-weight: bold;
+}
+
+p {
+    font-family: 'Muli', sans-serif;
+    font-size: 125%;
+}
+
+body {
+    background-color: #eeeeee;
 }
 
 .upper_bar {
-    height: 30px;
     background-color: #006699;
+    display: flex;
+    height: 30px;
+    justify-content: space-around;
 }
+
+.main_column {
+    background-color: white;
+    margin: auto;
+    width: 86%;
+}
+
