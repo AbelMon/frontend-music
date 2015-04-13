@@ -28,7 +28,7 @@ var append_songs = function(array) {
     for (i = 0; i < array.length; i++) {
         track_position = count + i;
         if (array[i]["image"]) {
-            $(".body_page").append(song_box_image + image_tag + array[i]["image"][3]["#text"] +"' class='img-thumbnail'>" + song_box_info  + "<p class='song_name'>" + track_position.toString() +"<b>. Track: </b>" + array[i]["name"] + "</p> <p class='artist_name'>  → <b>Artist: </b>"+array[i]["artist"]["name"] + "</p>" + "</div></div>");
+            $(".body_page").append(song_box_image + image_tag + array[i]["image"][3]["#text"] +"' class='img-thumbnail'>" + song_box_info  + "<p class='track_position'><b> Position: </b>" + track_position.toString() + "</p><p class='song_name'> <b>Track: </b>" + array[i]["name"] + "</p> <p class='artist_name'><b>Artist: </b>"+array[i]["artist"]["name"] + "</p>" + "<p class='playcount'> <b>Playcount: </b>"+ array[i]["playcount"] + "</p></div></div>");
         }
     };
 };

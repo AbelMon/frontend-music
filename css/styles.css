@@ -26,9 +26,7 @@ img {
 
 .upper_bar {
     background-color: #006699;
-    display: flex;
-    height: 30px;
-    justify-content: space-around;
+    padding-left: 2%;
 }
 
 .main_column {
@@ -40,6 +38,11 @@ img {
 .header_page {
     border-bottom: 1px solid #D7D7D7;
 }
+
+.playcount {
+    margin-left: 10%;
+}
+
 
 .song_name {
     margin-left: 10%;
@@ -57,6 +60,7 @@ img {
     text-align: center;
 }
 
-.song_name {
+.track_position {
     margin-top: 4%;
+    margin-left: 10%;
 }
