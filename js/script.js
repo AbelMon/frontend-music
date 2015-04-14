@@ -8,7 +8,7 @@ var image_tag = "<img src='";
 var description_box = "<div class='col-md-8 description_box'></div>";
 var no_image = "images/music.png";
 
-var sorting_play_most = function(object1, object2) {
+var sorting_play_most = function(object1, object2, key) {
     return object2.playcount - object1.playcount;
 };
 
@@ -16,9 +16,22 @@ var sorting_play_less = function(object1, object2) {
     return object1.playcount - object2.playcount;
 };
 
-var sorting_alpha = function(object1, object2) {
+var sorting_alpha_az = function(object1, object2) {
     return ((object1["name"] == object2["name"]) ? 0 : ((object1["name"] > object2["name"]) ? 1 : -1 ));
 };
+
+var sorting_alpha_za = function(object1, object2) {
+    return ((object2["name"] == object1["name"]) ? 0 : ((object2["name"] > object1["name"]) ? 1 : -1 ));
+};
+
+var sorting_large = function(object1, object2) {
+    return object2.duration - object1.duration;
+};
+
+var sorting_small = function(object1, object2) {
+    return object1.duration - object2.duration;
+};
+
 /*
 var append_songs = function(array) {
     var count = 1;
@@ -63,16 +76,53 @@ var ajax_response = function(sort_by) {
 };
 
 jQuery(document).ready(function($) {
-    ajax_response(sorting_play_most);
+    var trak_list;
+    $.ajax({
+        url: "http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=5d68545d24d173b2af0548c816dd1c0a&format=json",
+        dataType: "jsonp",
+        success : function(parsed_json) {
+            trak_list = parsed_json["tracks"]["track"];
+            trak_list.sort(sorting_play_most);
+            console.log(trak_list);
+            append_songs(trak_list);
+            console.log(trak_list[0]["image"][2]);
+        }
+    });
 
     $("#most_played").click(function(){
         del_songs();
-        ajax_response(sorting_play_most );
+        trak_list.sort(sorting_play_most);
+        append_songs(trak_list);
     });
 
     $("#less_played").click(function() {
         del_songs();
-        ajax_response(sorting_play_less);
+        trak_list.sort(sorting_play_less);
+        append_songs(trak_list);
+    });
+
+    $("#a_z").click(function() {
+        del_songs();
+        trak_list.sort(sorting_alpha_az);
+        append_songs(trak_list);
+    });
+
+    $("#z_a").click(function() {
+        del_songs();
+        trak_list.sort(sorting_alpha_za);
+        append_songs(trak_list);
+    });
+
+    $("#large").click(function() {
+        del_songs();
+        trak_list.sort(sorting_large);
+        append_songs(trak_list);
+    });
+
+    $("#small").click(function() {
+        del_songs();
+        trak_list.sort(sorting_small);
+        append_songs(trak_list);
     });
 });
 
