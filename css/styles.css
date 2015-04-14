@@ -1,31 +1,72 @@
 
+body {
+    background-color: #eeeeee;
+}
+
+
 h1 {
     font-family: 'Allerta Stencil', sans-serif;
     font-weight: bold;
 }
 
-h3 {
-    font-weight: bold;
-    margin-top: 40px;
-    margin-bottom: 35px;
-}
 
 p {
     font-family: 'Muli', sans-serif;
     font-size: 125%;
 }
 
-body {
-    background-color: #eeeeee;
+h4 {
+    cursor: pointer;
+    color: white;
+    font-family: 'Allerta Stencil', sans-serif;
+    font-weight: bold;
+    text-shadow: -2px -2px 1px #000;
+}
+
+button {
+    border: 0;
+    background-color: #006699;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 2px;
 }
 
 img {
     width: 70%;
-    margin: 8% 0 10% 3%;
+    margin: 9% 0 10% 3%;
+}
+
+.sort_by_div {
+    width: 100px;
+    margin: auto;
+}
+
+.navigation_bar {
+    background-color: #006699;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+    margin-left: -1%;
+}
+
+.item1 {
+    margin-top: 2px;
+}
+
+.menu_item {
+    cursor: pointer;
+}
+
+.top_tracks_heading {
+    font-weight: bold;
+    margin-top: 40px;
 }
 
 .upper_bar {
-    background-color: #006699;
     padding-left: 2%;
 }
 
@@ -52,6 +93,10 @@ img {
     margin-left: 10%;
 }
 
+.duration {
+    margin-left: 10%;
+}
+
 .song_box {
     border-bottom: 1px solid #D7D7D7;
 }
@@ -61,6 +106,6 @@ img {
 }
 
 .track_position {
-    margin-top: 4%;
+    margin-top: 5%;
     margin-left: 10%;
 }

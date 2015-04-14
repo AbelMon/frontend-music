@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="">
 
-        <title>Cognits Music</title>
+        <title>The Chart</title>
 
         <link rel="icon" href="images/icono.png">
         <link rel="stylesheet" href="css/libs/bootstrap.css">
@@ -17,14 +17,46 @@
     <body>
         <div class="container-fluid">
 
-            <div class="row upper_bar">
-                Order by
-                <button>
-                    Playcounts
-                </button>
-                <button>Link</button>
-                <button>Link</button>
-            </div>
+            <nav>
+                <div class="row navigation_bar">
+                    <div class="sort_by_div"><h4 class="text-center sort_by">Sort by<span class="caret"></span></h4></div>
+                    <ul class="nav navbar-bar">
+
+                        <li class="dropdown">
+                            <button id="playcount" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="true">Playcount <span class="caret"></span></button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="playcount">
+                                <li class="menu_item item1 text-center">Most played (1-50)</li>
+                                <li class="divider"></li>
+                                <li class="menu_item text-center">Less played (50-1)</li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <button id="song_name" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="true">
+                            Song Name <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="playcount">
+                                <li class="menu_item item1 text-center">A - Z</li>
+                                <li class="divider"></li>
+                                <li class="menu_item text-center">Z - A</li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <button id="duration" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="true">
+                                Duration
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="duration">
+                                <li class="menu_item item1 text-center">Small</li>
+                                <li class="divider"></li>
+                                <li class="menu_item text-center">Large</li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
 
             <div class="main_column">
                 <div class="container-fluid header_page">
@@ -35,7 +67,8 @@
                 </div>
 
                 <div class="container-fluid">
-                    <h3 class="text-center">Top tracks</h3>
+                    <h3 class="text-center top_tracks_heading">Top tracks</h3>
+                    <h3 class="text-center"><small> 1 - 50 </small></h3>
                 </div>
                 <div class="container-fluid body_page">
                 </div>
@@ -46,6 +79,5 @@
         <script src="js/libs/jquery-2.1.1.js"></script>
         <script src="js/script.js"></script>
         <script src="js/libs/bootstrap.js"></script>
-
     </body>
 </html>
