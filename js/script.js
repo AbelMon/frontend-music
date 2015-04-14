@@ -8,10 +8,17 @@ var image_tag = "<img src='";
 var description_box = "<div class='col-md-8 description_box'></div>";
 var no_image = "images/music.png";
 
-var sorting = function(object1, object2) {
+var sorting_play_most = function(object1, object2) {
     return object2.playcount - object1.playcount;
 };
 
+var sorting_play_less = function(object1, object2) {
+    return object1.playcount - object2.playcount;
+};
+
+var sorting_alpha = function(object1, object2) {
+    return ((object1["name"] == object2["name"]) ? 0 : ((object1["name"] > object2["name"]) ? 1 : -1 ));
+};
 /*
 var append_songs = function(array) {
     var count = 1;
@@ -22,6 +29,10 @@ var append_songs = function(array) {
     };
 };
 */
+
+var del_songs = function() {
+    $(".song_box").remove();
+}
 
 var append_songs = function(array) {
     var count = 1;
@@ -37,16 +48,31 @@ var append_songs = function(array) {
 };
 
 
-jQuery(document).ready(function($) {
+var ajax_response = function(sort_by) {
     $.ajax({
         url: "http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=5d68545d24d173b2af0548c816dd1c0a&format=json",
         dataType: "jsonp",
         success : function(parsed_json) {
             var trak_list = parsed_json["tracks"]["track"];
-            trak_list.sort(sorting);
+            trak_list.sort(sort_by);
             console.log(trak_list);
             append_songs(trak_list);
             console.log(trak_list[0]["image"][2]);
         }
     });
+};
+
+jQuery(document).ready(function($) {
+    ajax_response(sorting_play_most);
+
+    $("#most_played").click(function(){
+        del_songs();
+        ajax_response(sorting_play_most );
+    });
+
+    $("#less_played").click(function() {
+        del_songs();
+        ajax_response(sorting_play_less);
+    });
 });
+
