@@ -38,7 +38,6 @@ img {
 
 .sort_by_div {
     width: 100px;
-    margin: auto;
 }
 
 .navigation_bar {
@@ -58,6 +57,7 @@ img {
 }
 
 .menu_item {
+    font-family: 'Allerta Stencil', sans-serif;
     cursor: pointer;
 }
 
@@ -80,23 +80,6 @@ img {
     border-bottom: 1px solid #D7D7D7;
 }
 
-.playcount {
-    margin-left: 10%;
-}
-
-
-.song_name {
-    margin-left: 10%;
-}
-
-.artist_name {
-    margin-left: 10%;
-}
-
-.duration {
-    margin-left: 10%;
-}
-
 .song_box {
     border-bottom: 1px solid #D7D7D7;
 }
@@ -109,3 +92,8 @@ img {
     margin-top: 5%;
     margin-left: 10%;
 }
+
+.song_info {
+    margin-left: 10%;
+}
+
