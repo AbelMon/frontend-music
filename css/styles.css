@@ -97,3 +97,16 @@ img {
     margin-left: 10%;
 }
 
+
+.go_top {
+    border-radius: 100%;
+    display:none;
+    padding:1%;
+    background:#024959;
+    font-size:185%;
+    color:white;
+    cursor:pointer;
+    position: fixed;
+    bottom:1%;
+    right:1%;
+}

@@ -12,9 +12,11 @@
         <link rel="icon" href="images/icono.png">
         <link rel="stylesheet" href="css/libs/bootstrap.css">
         <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/libs/fonts.css">
         <link href='http://fonts.googleapis.com/css?family=Muli|Allerta+Stencil' rel='stylesheet'>
     </head>
     <body>
+        <span class="go_top icon-arrow-up"></span> <!--Button to go up-->
         <div class="container-fluid">
 
             <nav>
@@ -23,7 +25,11 @@
                     <ul class="nav navbar-bar">
 
                         <li class="dropdown">
-                            <button id="playcount" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="true">Playcount <span class="caret"></span></button>
+                            <button id="playcount" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="true">
+                                Playcount
+                                <span class="caret"></span>
+                            </button>
+                            <!--Menu items-->
                             <ul class="dropdown-menu" role="menu" aria-labelledby="playcount">
                                 <li class="menu_item item1 text-center" id="most_played">Most played (1-50)</li>
                                 <li class="divider"></li>
@@ -33,8 +39,10 @@
 
                         <li class="dropdown">
                             <button id="song_name" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="true">
-                            Song Name <span class="caret"></span>
+                                Song Name 
+                                <span class="caret"></span>
                             </button>
+                            <!--Menu items-->
                             <ul class="dropdown-menu" role="menu" aria-labelledby="playcount">
                                 <li class="menu_item item1 text-center" id="a_z">A - Z</li>
                                 <li class="divider"></li>
@@ -47,6 +55,7 @@
                                 Duration
                                 <span class="caret"></span>
                             </button>
+                            <!--Menu items-->
                             <ul class="dropdown-menu" role="menu" aria-labelledby="duration">
                                 <li class="menu_item item1 text-center" id="small">Small</li>
                                 <li class="divider"></li>

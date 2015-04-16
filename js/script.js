@@ -87,6 +87,23 @@ jQuery(document).ready(function($) {
     var time;
 
     $(".nav").hide();
+
+    //Scroll up when you click on the span.go_top
+    $('.go_top').click(function(){
+        $('body, html').animate({
+            scrollTop: '0px'
+        }, 300);
+    });
+
+    //does appear the div when scroll down.
+    $(window).scroll(function(){
+        if( $(this).scrollTop() > 0 ){
+            $('.go_top').slideDown(200);
+        } else {
+            $('.go_top').slideUp(200);
+        }
+    });
+
     $.ajax({
         url: "http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=5d68545d24d173b2af0548c816dd1c0a&format=json",
         dataType: "jsonp",
